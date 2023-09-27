@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "FancySliders",
+    name: "BottomSheetUI",
     platforms: [
         .macOS(.v10_12),
         .iOS(.v15),
@@ -13,18 +13,18 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "FancySliders",
-            targets: ["FancySliders"]
+            name: "BottomSheetUI",
+            targets: ["BottomSheetUI"]
         )
     ],
     targets: [
         .target(
-            name: "FancySliders",
+            name: "BottomSheetUI",
             path: "Sources"
         ),
         .testTarget(
-            name: "FancySlidersTests",
-            dependencies: ["FancySliders"],
+            name: "BottomSheetUITests",
+            dependencies: ["BottomSheetUI"],
             path: "Tests",
             exclude: ["CheckCocoaPodsQualityIndexes.rb"]
         )
