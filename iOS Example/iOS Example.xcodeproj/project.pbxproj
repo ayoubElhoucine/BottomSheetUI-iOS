@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21F3EBF32AA7741D00C5F3FE /* FancySliders in Frameworks */ = {isa = PBXBuildFile; productRef = 21F3EBF22AA7741D00C5F3FE /* FancySliders */; };
+		214D58452AC4826200863C10 /* BottomSheetUI in Frameworks */ = {isa = PBXBuildFile; productRef = 214D58442AC4826200863C10 /* BottomSheetUI */; };
 		D95C08B8277D8AA00016A10F /* iOS_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C08B7277D8AA00016A10F /* iOS_ExampleApp.swift */; };
 		D95C08BA277D8AA00016A10F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C08B9277D8AA00016A10F /* ContentView.swift */; };
 		D95C08BC277D8AA20016A10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95C08BB277D8AA20016A10F /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21F3EBF32AA7741D00C5F3FE /* FancySliders in Frameworks */,
+				214D58452AC4826200863C10 /* BottomSheetUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			);
 			name = "iOS Example";
 			packageProductDependencies = (
-				21F3EBF22AA7741D00C5F3FE /* FancySliders */,
+				214D58442AC4826200863C10 /* BottomSheetUI */,
 			);
 			productName = "iOS Example";
 			productReference = D95C08B4277D8AA00016A10F /* iOS Example.app */;
@@ -370,9 +370,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		21F3EBF22AA7741D00C5F3FE /* FancySliders */ = {
+		214D58442AC4826200863C10 /* BottomSheetUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = FancySliders;
+			productName = BottomSheetUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

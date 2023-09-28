@@ -10,6 +10,7 @@ import SwiftUI
 
 
 extension View {
-    
-    
+    public func asBottomSheetUI<ContentView: View>(show: Binding<Bool>, content: @escaping () -> ContentView) -> some View {
+        self.modifier(BottomSheetViewModifier(content: content, show: show))
+    }
 }
