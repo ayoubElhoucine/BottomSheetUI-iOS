@@ -1,7 +1,7 @@
 # BottomSheetUI
 
-![](demo_one.gif)    ![](demo_two.gif) 
-![](demo_three.gif)
+![](demo_one.gif)    ![](demo_three.gif) 
+![](demo_two.gif)
 
 ## Installation
 Add this to your project using Swift Package Manager. In Xcode that is simply: File > Swift Packages > Add Package Dependency https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git and you're done.
