@@ -21,7 +21,7 @@ struct ContentView: View {
             Button {
                 showDialog.toggle()
             } label: {
-                Text("Show dialog").foregroundColor(.black)
+                Text("Show dialog").foregroundColor(.white)
             }
             .padding(16)
             .background(.gray)
@@ -30,7 +30,7 @@ struct ContentView: View {
             Spacer()
         }
         .background(.white)
-        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExThree)
+        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExOne)
     }
     
     @ViewBuilder
