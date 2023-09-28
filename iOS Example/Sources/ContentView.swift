@@ -30,7 +30,7 @@ struct ContentView: View {
             Spacer()
         }
         .background(.white)
-        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExTwo)
+        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExThree)
     }
     
     @ViewBuilder
@@ -108,5 +108,51 @@ struct ContentView: View {
         .padding(.horizontal, 20)
         .padding(.bottom, 40)
         .shadow(radius: 5)
+    }
+    
+    @ViewBuilder
+    private func BottomSheetContentExThree() -> some View {
+        VStack(alignment: .center, spacing: 40) {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Bottom Sheet title").foregroundColor(.white).font(.system(size: 18, weight: Font.Weight.semibold))
+                Spacer().frame(height: 0)
+                ForEach(0 ..< 6) { index in
+                    HStack(spacing: 10) {
+                        Image(systemName: "list.bullet.circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                showDialog = false
+                            }
+                        Text("Menu item \(index + 1)").foregroundColor(.white)
+                        Spacer()
+                    }
+                }
+                Spacer().frame(height: 0)
+            }
+            .padding(20)
+            .background(.purple)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .padding(.horizontal, 20)
+            .shadow(radius: 5)
+            
+            Button {
+                self.showDialog = false
+            } label: {
+                Image(systemName: "xmark")
+                    .resizable()
+                    .frame(width: 18, height: 18)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        showDialog = false
+                    }
+            }
+            .padding(16)
+            .background(.purple)
+            .clipShape(Circle())
+            .padding(.bottom, 40)
+            .shadow(radius: 2)
+        }
     }
 }
