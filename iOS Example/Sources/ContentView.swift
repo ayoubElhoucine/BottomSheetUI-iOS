@@ -42,14 +42,17 @@ struct ContentView: View {
                         }
                 }
                 ForEach(0 ..< 3) { index in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack {
-                            Spacer().frame(width: 16)
-                            ForEach(0..<6) { index in
-                                Rectangle().fill(.gray.opacity(0.3)).frame(width: 90, height: 90).cornerRadius(8)
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Sub title \(index + 1)").foregroundColor(.black.opacity(0.8)).padding(.leading, 20).font(.system(size: 16, weight: Font.Weight.medium))
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                Spacer().frame(width: 16)
+                                ForEach(0..<6) { index in
+                                    Rectangle().fill(.gray.opacity(0.2)).frame(width: 90, height: 90).cornerRadius(8)
+                                }
                             }
-                        }
-                    }.frame(height: 90)
+                        }.frame(height: 90)
+                    }
                 }
                 Spacer().frame(height: 50)
             }
