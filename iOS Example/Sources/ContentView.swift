@@ -30,7 +30,10 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 HStack {
                     Spacer()
-                    Text("Bottom Sheet title").foregroundColor(.black).padding(.leading, 50).font(.system(size: 18, weight: Font.Weight.semibold))
+                    VStack(spacing: 10) {
+                        Capsule().fill(.gray.opacity(0.5)).frame(width: 40, height: 3)
+                        Text("Bottom Sheet title").foregroundColor(.black).font(.system(size: 18, weight: Font.Weight.semibold))
+                    }.padding(.leading, 50)
                     Spacer()
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
