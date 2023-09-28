@@ -91,7 +91,6 @@ struct BottomSheetWrapper<Content: View>: View {
                     .background(HeightGetter { model.contentHeight = $0 })
                     .offset(x: 0, y: model.relativeContentScrollOffset)
             }.frame(maxHeight: limitedSize)
-                .clipped()
                 .contentShape(Rectangle())
         }
     }
