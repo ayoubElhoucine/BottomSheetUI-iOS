@@ -23,6 +23,10 @@ struct ContentView: View {
             } label: {
                 Text("Show dialog").foregroundColor(.black)
             }
+            .padding(16)
+            .background(.gray)
+            .cornerRadius(12)
+            .shadow(radius: 2)
             Spacer()
         }
         .background(.white)
