@@ -30,7 +30,7 @@ struct ContentView: View {
             Spacer()
         }
         .background(.white)
-        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExOne)
+        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExThree)
     }
     
     @ViewBuilder
