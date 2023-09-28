@@ -32,9 +32,15 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
                     .onTapGesture {
                         self.show = false
                     }
-                contentView()
-                    .animation(.spring())
-                    .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
+                BottomSheetWrapper {
+                    contentView()
+                } popBack: {
+                    withAnimation {
+                        self.show = false
+                    }
+                }
+                .animation(.easeIn)
+                .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
             }
         }
     }
