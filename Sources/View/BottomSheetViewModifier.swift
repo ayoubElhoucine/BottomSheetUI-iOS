@@ -27,7 +27,7 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
             if show {
                 Spacer()
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .background(.black.opacity(0.5))
+                    .background(.black.opacity(0.4))
                     .animation(.default, value: self.show)
                     .onTapGesture {
                         self.show = false
@@ -35,9 +35,7 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
                 BottomSheetWrapper {
                     contentView()
                 } popBack: {
-                    withAnimation {
-                        self.show = false
-                    }
+                    self.show = false
                 }
                 .animation(.easeIn)
                 .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))

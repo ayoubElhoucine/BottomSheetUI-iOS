@@ -205,7 +205,6 @@ struct BottomSheetWrapper<Content: View>: View {
                         self.model.handleScroll(offset: gesture.predictedEndTranslation.height, startY: gesture.startLocation.y, final: true, popBack: popBack)
                     }
             )
-
         }
     }
  
