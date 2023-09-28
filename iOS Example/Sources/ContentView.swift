@@ -26,42 +26,83 @@ struct ContentView: View {
             Spacer()
         }
         .background(.white)
-        .asBottomSheetUI(show: $showDialog) {
-            VStack(spacing: 20) {
-                HStack {
-                    Spacer()
-                    VStack(spacing: 10) {
-                        Capsule().fill(.gray.opacity(0.5)).frame(width: 40, height: 3)
-                        Text("Bottom Sheet title").foregroundColor(.black).font(.system(size: 18, weight: Font.Weight.semibold))
-                    }.padding(.leading, 50)
-                    Spacer()
-                    Image(systemName: "xmark.circle.fill")
+        .asBottomSheetUI(show: $showDialog, content: BottomSheetContentExTwo)
+    }
+    
+    @ViewBuilder
+    private func BottomSheetContentExOne() -> some View {
+        VStack(spacing: 20) {
+            HStack {
+                Spacer()
+                VStack(spacing: 10) {
+                    Capsule().fill(.gray.opacity(0.5)).frame(width: 40, height: 3)
+                    Text("Bottom Sheet title").foregroundColor(.black).font(.system(size: 18, weight: Font.Weight.semibold))
+                }.padding(.leading, 50)
+                Spacer()
+                Image(systemName: "xmark.circle.fill")
+                    .resizable()
+                    .frame(width: 22, height: 22)
+                    .foregroundColor(.black.opacity(0.6))
+                    .padding(16)
+                    .onTapGesture {
+                        showDialog = false
+                    }
+            }
+            ForEach(0 ..< 3) { index in
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Sub title \(index + 1)").foregroundColor(.black.opacity(0.8)).padding(.leading, 20).font(.system(size: 16, weight: Font.Weight.medium))
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack {
+                            Spacer().frame(width: 16)
+                            ForEach(0..<6) { index in
+                                Rectangle().fill(.gray.opacity(0.2)).frame(width: 90, height: 90).cornerRadius(8)
+                            }
+                        }
+                    }.frame(height: 90)
+                }
+            }
+            Spacer().frame(height: 50)
+        }
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(radius: 5)
+    }
+    
+    @ViewBuilder
+    private func BottomSheetContentExTwo() -> some View {
+        VStack(spacing: 20) {
+            HStack {
+                Text("Bottom Sheet title").foregroundColor(.white).font(.system(size: 18, weight: Font.Weight.semibold))
+                Spacer()
+                Image(systemName: "xmark.circle.fill")
+                    .resizable()
+                    .frame(width: 22, height: 22)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        showDialog = false
+                    }
+            }
+            Spacer().frame(height: 0)
+            ForEach(0 ..< 6) { index in
+                HStack(spacing: 10) {
+                    Image(systemName: "list.bullet.circle")
                         .resizable()
-                        .frame(width: 22, height: 22)
-                        .foregroundColor(.black.opacity(0.6))
-                        .padding(16)
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
                         .onTapGesture {
                             showDialog = false
                         }
+                    Text("Menu item \(index + 1)").foregroundColor(.white)
+                    Spacer()
                 }
-                ForEach(0 ..< 3) { index in
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Sub title \(index + 1)").foregroundColor(.black.opacity(0.8)).padding(.leading, 20).font(.system(size: 16, weight: Font.Weight.medium))
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack {
-                                Spacer().frame(width: 16)
-                                ForEach(0..<6) { index in
-                                    Rectangle().fill(.gray.opacity(0.2)).frame(width: 90, height: 90).cornerRadius(8)
-                                }
-                            }
-                        }.frame(height: 90)
-                    }
-                }
-                Spacer().frame(height: 50)
             }
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(radius: 5)
+            Spacer().frame(height: 0)
         }
+        .padding(20)
+        .background(.black)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(.horizontal, 20)
+        .padding(.bottom, 40)
+        .shadow(radius: 5)
     }
 }
