@@ -24,19 +24,26 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
     public func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {
             content
+                .zIndex(0)
             if show {
                 Spacer()
+                    .zIndex(1)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .background(.black.opacity(0.4))
                     .animation(.default, value: self.show)
                     .onTapGesture {
-                        self.show = false
+                        withAnimation {
+                            self.show = false
+                        }
                     }
                 BottomSheetWrapper {
                     contentView()
                 } popBack: {
-                    self.show = false
+                    withAnimation {
+                        self.show = false
+                    }
                 }
+                .zIndex(2)
                 .animation(.easeIn)
                 .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
             }
