@@ -49,7 +49,9 @@ struct ContentView: View {
                     .foregroundColor(.black.opacity(0.6))
                     .padding(16)
                     .onTapGesture {
-                        showDialog = false
+                        withAnimation {
+                            showDialog = false
+                        }
                     }
             }
             ForEach(0 ..< 3) { index in
@@ -83,7 +85,9 @@ struct ContentView: View {
                     .frame(width: 22, height: 22)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        showDialog = false
+                        withAnimation {
+                            showDialog = false
+                        }
                     }
             }
             Spacer().frame(height: 0)
@@ -93,9 +97,6 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(.white)
-                        .onTapGesture {
-                            showDialog = false
-                        }
                     Text("Menu item \(index + 1)").foregroundColor(.white)
                     Spacer()
                 }
@@ -122,9 +123,6 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: 20, height: 20)
                             .foregroundColor(.white)
-                            .onTapGesture {
-                                showDialog = false
-                            }
                         Text("Menu item \(index + 1)").foregroundColor(.white)
                         Spacer()
                     }
@@ -145,7 +143,9 @@ struct ContentView: View {
                     .frame(width: 18, height: 18)
                     .foregroundColor(.white)
                     .onTapGesture {
-                        showDialog = false
+                        withAnimation {
+                            showDialog = false
+                        }
                     }
             }
             .padding(16)
