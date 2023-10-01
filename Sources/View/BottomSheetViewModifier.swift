@@ -29,7 +29,7 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
                 Spacer()
                     .zIndex(1)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .background(.black.opacity(0.4))
+                    .background(Color.black.opacity(0.4).ignoresSafeArea())
                     .animation(.default, value: self.show)
                     .onTapGesture {
                         withAnimation {

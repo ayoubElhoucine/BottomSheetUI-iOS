@@ -4,8 +4,10 @@
 ![](demo_two.gif)
 
 ## Installation
-Add this to your project using Swift Package Manager. In Xcode that is simply: File > Swift Packages > Add Package Dependency https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git and you're done.
-
+Add this to your project using Swift Package Manager. In Xcode that is simply: File > Swift Packages > Add Package Dependency 
+```swift
+https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git
+```
 
 ## Usage
 #### First you need to import the package
