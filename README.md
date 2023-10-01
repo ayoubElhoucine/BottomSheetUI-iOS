@@ -23,12 +23,17 @@ https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git
 ```swift
 import BottomSheetUI
 ```
-* To show a buttom sheet it's very simple, you only need to call a view extension 
+* Create a bool varaiable that will show and hide the bootom sheet
 ```swift
-.asBottomSheetUI(
-    show: $showDialog, // a state or published bool variable to show and dissmiss the dialog
-    content: { EmptyView() } // add your dialog content
-)
+@State private var showDialog = false
+```
+* Add `.asBottomSheetUI(//...)` to the view you want your sheet on,
+```swift
+YourViewScreen()
+    .asBottomSheetUI(
+        show: $showDialog, // a state or published bool variable to show and dissmiss the dialog
+        content: { EmptyView() } // add your dialog content
+    )
 ```
 
 ## Example
