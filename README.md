@@ -19,11 +19,11 @@ https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git
 ```
 
 ## Usage
-First you need to import the package
+* Import the package
 ```swift
 import BottomSheetUI
 ```
-To show a buttom sheet it's very simple, you only need to call a view extension 
+* To show a buttom sheet it's very simple, you only need to call a view extension 
 ```swift
 .asBottomSheetUI(
     show: $showDialog, // a state or published bool variable to show and dissmiss the dialog
@@ -32,7 +32,7 @@ To show a buttom sheet it's very simple, you only need to call a view extension
 ```
 
 <details>
-<summary>Example Source Code</summary>
+<summary>**Example Source Code <>**</summary>
 
 ```swift
 import SwiftUI
