@@ -92,6 +92,8 @@ struct ContentView: View {
 </details>
 
 
+## Contributions
+Feel free to contribute via fork/pull request to main branch. If you want new feature or report a bug then start a new issue.
 
 
 ## Author
