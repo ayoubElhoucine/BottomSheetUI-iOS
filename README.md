@@ -19,15 +19,15 @@ https://github.com/ayoubElhoucine/BottomSheetUI-iOS.git
 ```
 
 ## Usage
-* Import the package
+1. Import the package
 ```swift
 import BottomSheetUI
 ```
-* Create a bool varaiable that will show and hide the bootom sheet
+2. Create a bool varaiable that will show and hide the bottom sheet
 ```swift
 @State private var showDialog = false
 ```
-* Add `.asBottomSheetUI(//...)` to the view you want your sheet on,
+3. Add `.asBottomSheetUI(...)` to the view you want your sheet on
 ```swift
 YourViewScreen()
     .asBottomSheetUI(
