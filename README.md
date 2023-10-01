@@ -31,8 +31,9 @@ import BottomSheetUI
 )
 ```
 
+## Example
 <details>
-<summary>**Example Source Code <>**</summary>
+<summary>Source Code <></summary>
 
 ```swift
 import SwiftUI
