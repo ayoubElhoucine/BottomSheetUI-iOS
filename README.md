@@ -35,6 +35,9 @@ YourViewScreen()
         content: { EmptyView() } // add your dialog content
     )
 ```
+4. Show and dissmiss the dialog:
+* To show the dialog 'self.showDialog = true'
+* To hide the dialog 'self.showDialog = false'
 
 ## Example
 <details>
