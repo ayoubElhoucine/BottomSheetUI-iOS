@@ -26,23 +26,16 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
             content
                 .zIndex(0)
             if show {
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Spacer()
-                            .zIndex(1)
-                            .background(Color.black.opacity(0.4).ignoresSafeArea())
-                            .animation(.default, value: self.show)
-                            .onTapGesture {
-                                withAnimation {
-                                    self.show = false
-                                }
-                            }
-                        Spacer()
+                Spacer()
+                    .zIndex(1)
+                    .frame(width: .infinity, height: .infinity)
+                    .background(Color.black.opacity(0.4).ignoresSafeArea())
+                    .animation(.default, value: self.show)
+                    .onTapGesture {
+                        withAnimation {
+                            self.show = false
+                        }
                     }
-                    Spacer()
-                }
                 BottomSheetWrapper {
                     contentView()
                 } popBack: {
