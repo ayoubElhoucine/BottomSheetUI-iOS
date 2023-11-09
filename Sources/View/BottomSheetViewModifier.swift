@@ -26,7 +26,7 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
             content
                 .zIndex(0)
             if show {
-                Spacer()
+                EmptyView()
                     .zIndex(1)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .background(Color.black.opacity(0.4).ignoresSafeArea())
