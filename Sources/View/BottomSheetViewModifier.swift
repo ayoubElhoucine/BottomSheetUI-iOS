@@ -28,7 +28,7 @@ public struct BottomSheetViewModifier<ContentView: View>: ViewModifier {
             if show {
                 Spacer()
                     .zIndex(1)
-                    .frame(width: .infinity, height: .infinity)
+                    .frame(minWidth: .infinity, minHeight: .infinity)
                     .background(Color.black.opacity(0.4).ignoresSafeArea())
                     .animation(.default, value: self.show)
                     .onTapGesture {
